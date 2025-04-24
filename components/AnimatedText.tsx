@@ -1,0 +1,36 @@
+import { ColourfulLetter } from './ColourfulLetter';
+import { MotiView } from 'moti';
+import { View } from 'react-native';
+import { Easing } from 'react-native-reanimated';
+
+export default function AnimatedText({ children }: { children: string }) {
+  const letters = children.split('');
+
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+      }}
+    >
+      {letters.map((letter, index) => (
+        <MotiView
+          key={index}
+          from={{ translateY: 1 }}
+          animate={{ translateY: -4 }}
+          transition={{
+            type: 'timing',
+            duration: 1600,
+            delay: index * 120,
+            repeat: Infinity,
+            repeatReverse: true,
+            easing: Easing.inOut(Easing.ease),
+          }}
+        >
+          <ColourfulLetter letter={letter} />
+        </MotiView>
+      ))}
+    </View>
+  );
+}

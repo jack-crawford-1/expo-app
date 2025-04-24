@@ -11,8 +11,8 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { inject } from '@vercel/analytics';
+import { Platform } from 'react-native';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -25,7 +25,7 @@ export default function RootLayout() {
     if (loaded) {
       SplashScreen.hideAsync();
 
-      if (typeof window !== 'undefined') {
+      if (Platform.OS === 'web') {
         inject();
       }
     }
@@ -38,7 +38,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="dummy1" options={{ headerShown: false }} />
+        <Stack.Screen name="dummy2" options={{ headerShown: false }} />
+        <Stack.Screen name="dummy3" options={{ headerShown: false }} />
+        <Stack.Screen name="dummy4" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
