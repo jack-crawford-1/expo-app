@@ -177,6 +177,7 @@ export default function Home() {
           player={player}
           style={styles.video}
           nativeControls={true}
+          allowsFullscreen={false}
           contentFit="contain"
         />
       </View>
