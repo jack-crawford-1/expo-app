@@ -168,9 +168,9 @@ export default function Home() {
 
   return (
     <ScrollView contentContainerStyle={styles.contentContainer}>
-      <View style={styles.titleContainer}>
+      {/* <View style={styles.titleContainer}>
         <AnimatedText>Jack Crawford</AnimatedText>
-      </View>
+      </View> */}
 
       <View style={styles.videoContainer}>
         <VideoView
