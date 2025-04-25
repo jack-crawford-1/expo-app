@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     flexDirection: 'column',
     backgroundColor: '#141414',
-    paddingTop: 60,
+    paddingTop: 0,
   },
   titleContainer: {
     alignItems: 'center',
@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
   videoContainer: {
     width: '100%',
     height: 240,
+    marginTop: 10,
   },
   video: {
     width: '100%',
