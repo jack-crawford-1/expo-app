@@ -184,7 +184,7 @@ export default function Home() {
       <Text style={styles.header}>{project.title}</Text>
       <View style={styles.textContainer}>
         <Text style={styles.text1}>{project.description}</Text>
-        <Text style={styles.text1}>{project.subtext}</Text>
+        {/* <Text style={styles.text1}>{project.subtext}</Text> */}
         <View style={styles.linkButtonRow}>
           <TouchableOpacity onPress={() => Linking.openURL(project.gitHubUrl)}>
             <Text style={styles.text2}>See Code ⤴︎ </Text>
