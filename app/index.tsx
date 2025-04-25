@@ -174,7 +174,7 @@ export default function Home() {
         <VideoView
           player={player}
           style={styles.video}
-          nativeControls={true}
+          nativeControls={false}
           allowsFullscreen={false}
           startsPictureInPictureAutomatically={false}
           contentFit="contain"
