@@ -19,6 +19,12 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    WinkyRough: require('../assets/fonts/WinkyRough-Bold.ttf'),
+    WinkyRegular: require('../assets/fonts/WinkyRough-Regular.ttf'),
+    WinkyBlack: require('../assets/fonts/WinkyRough-Black.ttf'),
+    WinkySemiBold: require('../assets/fonts/WinkyRough-SemiBold.ttf'),
+    UbuntuRegular: require('../assets/fonts/Ubuntu-Regular.ttf'),
+    UbuntuBold: require('../assets/fonts/Ubuntu-Bold.ttf'),
   });
 
   useEffect(() => {

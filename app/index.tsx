@@ -213,6 +213,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
+
     flexGrow: 1,
     justifyContent: 'space-around',
     alignContent: 'center',
@@ -234,17 +235,19 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 24,
-    color: '#ffffff',
+    color: '#eeeeee',
     textAlign: 'center',
     fontWeight: 'bold',
     marginBottom: 10,
+    fontFamily: 'UbuntuBold',
   },
   textContainer: {
     marginBottom: 0,
   },
   text1: {
     fontSize: 18,
-    color: '#eeeeee',
+    fontFamily: 'UbuntuRegular',
+    color: '#cccccc',
     textAlign: 'left',
     marginBottom: 10,
     lineHeight: 25,
@@ -255,6 +258,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginBottom: 10,
     lineHeight: 25,
+    fontFamily: 'UbuntuBold',
   },
   button: {
     alignSelf: 'center',
