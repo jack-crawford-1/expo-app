@@ -178,6 +178,7 @@ export default function Home() {
           style={styles.video}
           nativeControls={true}
           allowsFullscreen={false}
+          startsPictureInPictureAutomatically={false}
           contentFit="contain"
         />
       </View>

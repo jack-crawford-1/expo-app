@@ -17,8 +17,8 @@ export default function AnimatedText({ children }: { children: string }) {
       {letters.map((letter, index) => (
         <MotiView
           key={index}
-          from={{ translateY: 1 }}
-          animate={{ translateY: -4 }}
+          from={{ translateY: 4 }}
+          animate={{ translateY: -8 }}
           transition={{
             type: 'timing',
             duration: 1600,
