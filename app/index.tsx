@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     flexDirection: 'column',
     backgroundColor: '#141414',
-    paddingTop: 5,
+    paddingTop: 10,
   },
   titleContainer: {
     alignItems: 'center',
