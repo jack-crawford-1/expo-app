@@ -214,13 +214,13 @@ export default function Home() {
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
-
     flexGrow: 1,
     justifyContent: 'space-around',
     alignContent: 'center',
     flexDirection: 'column',
     backgroundColor: '#141414',
     paddingTop: 10,
+    height: '110%',
   },
   titleContainer: {
     alignItems: 'center',
