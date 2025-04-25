@@ -9,6 +9,7 @@ import {
   View,
   Image,
   Linking,
+  ScrollView,
 } from 'react-native';
 
 const projects = [
@@ -166,7 +167,7 @@ export default function Home() {
   }, []);
 
   return (
-    <View style={styles.contentContainer}>
+    <ScrollView contentContainerStyle={styles.contentContainer}>
       <View style={styles.titleContainer}>
         <AnimatedText>Jack Crawford</AnimatedText>
       </View>
@@ -204,14 +205,14 @@ export default function Home() {
           ))}
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'space-around',
     alignContent: 'center',
     flexDirection: 'column',
