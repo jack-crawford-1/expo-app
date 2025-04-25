@@ -151,16 +151,14 @@ const projects = [
   },
 ];
 
-// const garden: VideoSource = require('../assets/video/garden.mp4');
-// const hiking: VideoSource = require('../assets/video/hiking.mp4');
-// const subscribe: VideoSource = require('../assets/video/subscribe.mp4');
-// const keys: VideoSource = require('../assets/video/keys.mp4');
-
 export default function Home() {
   const [index, setIndex] = useState(0);
   const project = projects[index];
 
-  const player = useVideoPlayer(project.video, (player) => player.play());
+  const player = useVideoPlayer(project.video, (player) => {
+    player.play();
+    player.muted;
+  });
 
   const replacePlayer = useCallback(() => {
     setIndex((prev) => (prev + 1) % projects.length);
