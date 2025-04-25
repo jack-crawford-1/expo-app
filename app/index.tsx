@@ -160,12 +160,7 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const project = projects[index];
   const [isPlaying, setIsPlaying] = useState(false);
-  // const player = useVideoPlayer(project.video, (player) => player.play());
-  const player = useVideoPlayer(project.video, (player) => {});
-  const handlePlay = async () => {
-    player.play();
-    setIsPlaying(true);
-  };
+  const player = useVideoPlayer(project.video, (player) => player.play());
 
   const replacePlayer = useCallback(() => {
     setIndex((prev) => (prev + 1) % projects.length);
@@ -178,21 +173,14 @@ export default function Home() {
       </View>
 
       <View style={styles.videoContainer}>
-        <View style={styles.videoWrapper}>
-          <VideoView
-            player={player}
-            style={styles.video}
-            nativeControls={false}
-            allowsFullscreen={false}
-            contentFit="contain"
-          />
-
-          {!isPlaying && (
-            <TouchableOpacity style={styles.playOverlay} onPress={handlePlay}>
-              <Text style={styles.playText}>Tap to Play</Text>
-            </TouchableOpacity>
-          )}
-        </View>
+        <VideoView
+          player={player}
+          style={styles.video}
+          nativeControls={true}
+          allowsFullscreen={false}
+          startsPictureInPictureAutomatically={false}
+          contentFit="contain"
+        />
       </View>
 
       <Text style={styles.header}>{project.title}</Text>
@@ -303,26 +291,5 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,
-  },
-  videoWrapper: {
-    position: 'relative',
-    width: '100%',
-    height: 240,
-  },
-  playOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-  },
-  playText: {
-    fontSize: 24,
-    color: '#fff',
-    fontWeight: 'bold',
-    fontFamily: 'UbuntuBold',
   },
 });
