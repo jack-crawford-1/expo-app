@@ -2,7 +2,14 @@ import AnimatedText from '../components/AnimatedText';
 import { GetNatureColour, GetMidtoneColour } from '../components/RandomColours';
 import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
 import { useState, useCallback } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  Linking,
+} from 'react-native';
 
 const projects = [
   {
@@ -11,6 +18,7 @@ const projects = [
     description: `A web app for finding, contributing to, and managing community gardens. Users can submit new garden locations with coordinates and extra details. Implements authentication, Prisma with SQLite for data management, and Google Maps API for visualising location data. Built using Next.js, TypeScript, and Tailwind CSS with a focus on backend logic and user contributions.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
+    gitHubUrl: 'https://github.com/jack-crawford-1/Community-Garden-App',
     icons: [
       {
         src: require('../assets/icons/nextjs.png'),
@@ -49,6 +57,7 @@ const projects = [
     description: `A full-stack web app for browsing, sharing, and managing hiking tracks. Uses Google Maps API for map rendering, integrates external APIs for geolocation data, and stores trails in PostgreSQL. Implements authentication, geospatial logic, and API efficiency. Built to explore backend mapping tools, elevation overlays, and custom user-drawn routes.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
+    gitHubUrl: 'https://github.com/jack-crawford-1/Hiking-App',
     icons: [
       {
         src: require('../assets/icons/react.png'),
@@ -79,6 +88,7 @@ const projects = [
     description: `A full-stack app for handling subscriptions and payments using Paystation’s OAuth and Hosted Purchases API. Payment responses are validated before storing data in MongoDB. Features authentication with JWT, bcrypt, and Express, with Mongoose for managing database logic. Provides API endpoints for user auth, subscription setup, and payment handling.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
+    gitHubUrl: 'https://github.com/jack-crawford-1/Subscribe-and-Payments',
     icons: [
       {
         src: require('../assets/icons/react.png'),
@@ -113,6 +123,7 @@ const projects = [
     description: `A mini piano app built with React, TypeScript, and Tone.js for real-time audio synthesis. Tracks keyboard input, plays chords, and handles user interaction with state-driven logic. Uses event listeners to manage key presses and trigger dynamic audio rendering. Focuses on real-time audio, sound accuracy, and performance optimisation.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
+    gitHubUrl: 'https://github.com/jack-crawford-1/Keyboard-Player-React',
     icons: [
       {
         src: require('../assets/icons/react.png'),
@@ -139,10 +150,10 @@ const projects = [
   },
 ];
 
-const garden: VideoSource = require('../assets/video/garden.mp4');
-const hiking: VideoSource = require('../assets/video/hiking.mp4');
-const subscribe: VideoSource = require('../assets/video/subscribe.mp4');
-const keys: VideoSource = require('../assets/video/keys.mp4');
+// const garden: VideoSource = require('../assets/video/garden.mp4');
+// const hiking: VideoSource = require('../assets/video/hiking.mp4');
+// const subscribe: VideoSource = require('../assets/video/subscribe.mp4');
+// const keys: VideoSource = require('../assets/video/keys.mp4');
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -161,7 +172,12 @@ export default function Home() {
       </View>
 
       <View style={styles.videoContainer}>
-        <VideoView player={player} style={styles.video} nativeControls={true} />
+        <VideoView
+          player={player}
+          style={styles.video}
+          nativeControls={true}
+          contentFit="contain"
+        />
       </View>
 
       <Text style={styles.header}>{project.title}</Text>
@@ -169,7 +185,9 @@ export default function Home() {
         <Text style={styles.text1}>{project.description}</Text>
         <Text style={styles.text1}>{project.subtext}</Text>
         <View style={styles.linkButtonRow}>
-          <Text style={styles.text2}>See Code ⤴︎ </Text>
+          <TouchableOpacity onPress={() => Linking.openURL(project.gitHubUrl)}>
+            <Text style={styles.text2}>See Code ⤴︎ </Text>
+          </TouchableOpacity>
 
           <TouchableOpacity style={styles.button} onPress={replacePlayer}>
             <Text style={styles.buttonText}>Next Project</Text>
@@ -186,19 +204,18 @@ export default function Home() {
           ))}
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={replacePlayer}>
-        <Text style={styles.buttonText}>Next Project</Text>
-      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   contentContainer: {
-    flex: 1,
     paddingHorizontal: 20,
+    flex: 1,
     justifyContent: 'space-around',
-    backgroundColor: 'black',
+    alignContent: 'center',
+    flexDirection: 'column',
+    backgroundColor: '#141414',
     paddingTop: 60,
   },
   titleContainer: {
@@ -218,8 +235,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 15,
-    marginTop: 5,
+    marginBottom: 10,
   },
   textContainer: {
     marginBottom: 0,
@@ -262,8 +278,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    marginTop: 10,
-    paddingBottom: 130,
+    marginBottom: 10,
   },
 
   icon: {
