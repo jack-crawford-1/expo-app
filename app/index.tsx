@@ -220,7 +220,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#141414',
     paddingTop: 10,
-    height: '110%',
   },
   titleContainer: {
     alignItems: 'center',
