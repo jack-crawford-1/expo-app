@@ -247,6 +247,7 @@ const styles = StyleSheet.create({
   },
   textcontainer: {
     flex: 1,
+    minHeight: 200,
     padding: 20,
     backgroundColor: 'black',
   },
