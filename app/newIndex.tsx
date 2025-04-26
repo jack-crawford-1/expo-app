@@ -179,7 +179,7 @@ export default function newIndex() {
           />
         </View>
         <View style={styles.projectTitle}>
-          <AnimatedText>Hello World</AnimatedText>
+          <AnimatedText>Project Title</AnimatedText>
         </View>
         <View style={styles.textcontainer}>
           <Text style={styles.text}>
@@ -194,11 +194,11 @@ export default function newIndex() {
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.links}>
-            <Text style={styles.text}>See Code ⤴︎</Text>
+            <Text style={styles.text2}>See Code ⤴︎</Text>
           </View>
-          <View style={styles.button}>
-            <Button title="click"></Button>
-          </View>
+          <TouchableOpacity style={styles.button} onPress={replacePlayer}>
+            <Text style={styles.buttonText}>Next Project</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.icons}>
           <View style={styles.iconRow}>
@@ -254,26 +254,38 @@ const styles = StyleSheet.create({
     fontSize: 19,
     color: 'white',
   },
+  text2: {
+    fontSize: 18,
+    color: 'lightgreen',
+    textAlign: 'left',
+    marginBottom: 10,
+    lineHeight: 25,
+    fontFamily: 'UbuntuBold',
+  },
   buttonContainer: {
     flex: 1,
-    backgroundColor: 'cyan',
+    backgroundColor: 'black',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: 20,
   },
   button: {
-    backgroundColor: 'red',
-    height: 50,
-    width: 100,
-    borderColor: 'blue',
-    borderStyle: 'solid',
-    borderWidth: 3,
-    borderRadius: 10,
+    alignSelf: 'center',
+    borderRadius: 6,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    backgroundColor: GetNatureColour(),
   },
 
-  links: { backgroundColor: 'purple' },
-  icons: { flex: 1, padding: 20, backgroundColor: 'pink' },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#ffffff',
+  },
+
+  links: {},
+  icons: { flex: 1, padding: 20, backgroundColor: 'black' },
 
   iconRow: {
     flexDirection: 'row',
