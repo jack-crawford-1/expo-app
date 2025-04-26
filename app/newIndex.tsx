@@ -179,18 +179,10 @@ export default function newIndex() {
           />
         </View>
         <View style={styles.projectTitle}>
-          <AnimatedText>Project Title</AnimatedText>
+          <AnimatedText>{project.title}</AnimatedText>
         </View>
         <View style={styles.textcontainer}>
-          <Text style={styles.text}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
-            delectus fugiat nostrum voluptates dolorum similique voluptas
-            assumenda ad, cumque accusantium nisi laboriosam illum sunt fuga
-            saepe praesentium animi hic doloribus. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Reiciendis officia maiores dolorem,
-            ad deleniti et soluta quas incidunt atque quis beatae aliquam modi
-            sit doloribus, recusandae assumenda odit veritatis fuga!
-          </Text>
+          <Text style={styles.text}>{project.description}</Text>
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.links}>
@@ -225,6 +217,7 @@ const styles = StyleSheet.create({
   inner: {
     flexGrow: 1,
     paddingBottom: 100,
+    paddingTop: 100,
   },
   heading: {
     height: 'auto',
