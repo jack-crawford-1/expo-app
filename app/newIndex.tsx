@@ -16,7 +16,7 @@ import {
 const projects = [
   {
     video: require('../assets/video/garden.mp4'),
-    title: 'Community Gardens Sharing',
+    title: 'Community Gardens',
     description: `A web app for finding, contributing to, and managing community gardens. Users can submit new garden locations with coordinates and extra details. Implements authentication, Prisma with SQLite for data management, and Google Maps API for visualising location data. Built using Next.js, TypeScript, and Tailwind CSS with a focus on backend logic and user contributions.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
@@ -55,7 +55,7 @@ const projects = [
   },
   {
     video: require('../assets/video/hiking.mp4'),
-    title: 'DOC Hiking Trails Finder',
+    title: 'DOC Hiking Trails',
     description: `A full-stack web app for browsing, sharing, and managing hiking tracks. Uses Google Maps API for map rendering, integrates external APIs for geolocation data, and stores trails in PostgreSQL. Implements authentication, geospatial logic, and API efficiency. Built to explore backend mapping tools, elevation overlays, and custom user-drawn routes.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
@@ -86,7 +86,7 @@ const projects = [
   },
   {
     video: require('../assets/video/subscribe.mp4'),
-    title: 'Subscribe and Pay App',
+    title: 'Payments App',
     description: `A full-stack app for handling subscriptions and payments using Paystation’s OAuth and Hosted Purchases API. Payment responses are validated before storing data in MongoDB. Features authentication with JWT, bcrypt, and Express, with Mongoose for managing database logic. Provides API endpoints for user auth, subscription setup, and payment handling.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
@@ -121,7 +121,7 @@ const projects = [
   },
   {
     video: require('../assets/video/keys.mp4'),
-    title: 'Virtual Keyboard with ToneJS',
+    title: 'Virtual Keyboard',
     description: `A mini piano app built with React, TypeScript, and Tone.js for real-time audio synthesis. Tracks keyboard input, plays chords, and handles user interaction with state-driven logic. Uses event listeners to manage key presses and trigger dynamic audio rendering. Focuses on real-time audio, sound accuracy, and performance optimisation.`,
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
