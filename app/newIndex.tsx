@@ -155,7 +155,6 @@ const projects = [
 export default function newIndex() {
   const [index, setIndex] = useState(0);
   const project = projects[index];
-  const [isPlaying, setIsPlaying] = useState(false);
   const player = useVideoPlayer(project.video, (player) => player.play());
 
   const replacePlayer = useCallback(() => {
@@ -166,7 +165,7 @@ export default function newIndex() {
     <ScrollView style={styles.container}>
       <View style={styles.inner}>
         <View style={styles.heading}>
-          <AnimatedText>Hello World</AnimatedText>
+          <AnimatedText>Jack Crawford</AnimatedText>
         </View>
         <View style={styles.video}>
           <VideoView
@@ -179,7 +178,6 @@ export default function newIndex() {
           />
         </View>
         <View style={styles.projectTitle}>
-          {/* <AnimatedText>{project.title}</AnimatedText> */}
           <Text style={styles.header}>{project.title}</Text>
         </View>
         <View style={styles.textcontainer}>
@@ -187,7 +185,11 @@ export default function newIndex() {
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.links}>
-            <Text style={styles.text2}>See Code ⤴︎</Text>
+            <TouchableOpacity
+              onPress={() => Linking.openURL(project.gitHubUrl)}
+            >
+              <Text style={styles.text2}>See Code ⤴︎ </Text>
+            </TouchableOpacity>
           </View>
           <TouchableOpacity style={styles.button} onPress={replacePlayer}>
             <Text style={styles.buttonText}>Next Project</Text>
