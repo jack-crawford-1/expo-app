@@ -224,6 +224,7 @@ const styles = StyleSheet.create({
   },
   inner: {
     flexGrow: 1,
+    paddingBottom: 100,
   },
   heading: {
     height: 'auto',
@@ -246,8 +247,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textcontainer: {
-    flex: 1,
-    minHeight: 200,
     padding: 20,
     backgroundColor: 'black',
   },
