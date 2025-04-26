@@ -28,27 +28,24 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
+    if (!loaded) return;
 
-      if (Platform.OS === 'web') {
-        inject();
-      }
+    SplashScreen.hideAsync();
+
+    if (Platform.OS === 'web') {
+      inject();
     }
   }, [loaded]);
 
-  if (!loaded) {
-    return null;
-  }
-
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="dummy1" options={{ headerShown: false }} />
-        <Stack.Screen name="dummy2" options={{ headerShown: false }} />
-        <Stack.Screen name="dummy3" options={{ headerShown: false }} />
-        <Stack.Screen name="dummy4" options={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="newIndex" />
+        <Stack.Screen name="dummy1" />
+        <Stack.Screen name="dummy2" />
+        <Stack.Screen name="dummy3" />
+        <Stack.Screen name="dummy4" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

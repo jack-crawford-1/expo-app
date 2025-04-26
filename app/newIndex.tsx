@@ -1,4 +1,3 @@
-import { router } from 'expo-router';
 import AnimatedText from '../components/AnimatedText';
 import { GetNatureColour, GetMidtoneColour } from '../components/RandomColours';
 import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
@@ -153,12 +152,7 @@ const projects = [
   },
 ];
 
-// const garden: VideoSource = require('../assets/video/garden.mp4');
-// const hiking: VideoSource = require('../assets/video/hiking.mp4');
-// const subscribe: VideoSource = require('../assets/video/subscribe.mp4');
-// const keys: VideoSource = require('../assets/video/keys.mp4');
-
-export default function Home() {
+export default function newIndex() {
   const [index, setIndex] = useState(0);
   const project = projects[index];
   const [isPlaying, setIsPlaying] = useState(false);
@@ -169,134 +163,126 @@ export default function Home() {
   }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.contentContainer}>
-      <View style={styles.titleContainer}>
-        <AnimatedText>Jack Crawford</AnimatedText>
-      </View>
-
-      <View style={styles.videoContainer}>
-        <VideoView
-          player={player}
-          style={styles.video}
-          nativeControls={true}
-          allowsFullscreen={false}
-          startsPictureInPictureAutomatically={false}
-          contentFit="contain"
-        />
-      </View>
-
-      <Text style={styles.header}>{project.title}</Text>
-      <View style={styles.textContainer}>
-        <Text style={styles.text1}>{project.description}</Text>
-        {/* <Text style={styles.text1}>{project.subtext}</Text> */}
-        <View style={styles.linkButtonRow}>
-          <TouchableOpacity onPress={() => Linking.openURL(project.gitHubUrl)}>
-            <Text style={styles.text2}>See Code ⤴︎ </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={replacePlayer}>
-            <Text style={styles.buttonText}>Next Project</Text>
-          </TouchableOpacity>
+    <ScrollView style={styles.container}>
+      <View style={styles.inner}>
+        <View style={styles.heading}>
+          <AnimatedText>Hello World</AnimatedText>
         </View>
-        <View style={styles.iconRow}>
-          {project.icons?.map((icon, index) => (
-            <Image
-              key={index}
-              source={icon.src}
-              style={styles.icon}
-              resizeMode="contain"
-            />
-          ))}
+        <View style={styles.video}>
+          <VideoView
+            player={player}
+            style={styles.videoPH}
+            nativeControls={true}
+            allowsFullscreen={false}
+            startsPictureInPictureAutomatically={false}
+            contentFit="contain"
+          />
         </View>
-        <Button
-          title="Go to New Page"
-          onPress={() => router.push('/newIndex')}
-        />
+        <View style={styles.projectTitle}>
+          <AnimatedText>Hello World</AnimatedText>
+        </View>
+        <View style={styles.textcontainer}>
+          <Text style={styles.text}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
+            delectus fugiat nostrum voluptates dolorum similique voluptas
+            assumenda ad, cumque accusantium nisi laboriosam illum sunt fuga
+            saepe praesentium animi hic doloribus. Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Reiciendis officia maiores dolorem,
+            ad deleniti et soluta quas incidunt atque quis beatae aliquam modi
+            sit doloribus, recusandae assumenda odit veritatis fuga!
+          </Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <View style={styles.links}>
+            <Text style={styles.text}>See Code ⤴︎</Text>
+          </View>
+          <View style={styles.button}>
+            <Button title="click"></Button>
+          </View>
+        </View>
+        <View style={styles.icons}>
+          <View style={styles.iconRow}>
+            {project.icons?.map((icon, index) => (
+              <Image
+                key={index}
+                source={icon.src}
+                style={styles.icon}
+                resizeMode="contain"
+              />
+            ))}
+          </View>
+        </View>
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    paddingHorizontal: 20,
-    flexGrow: 1,
-    justifyContent: 'space-around',
-    alignContent: 'center',
-    flexDirection: 'column',
-    backgroundColor: '#141414',
-    paddingTop: 10,
-    paddingBottom: 50,
-    minHeight: '100%',
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
   },
-  titleContainer: {
+  inner: {
+    flexGrow: 1,
+  },
+  heading: {
+    height: 'auto',
+    backgroundColor: 'black',
+    justifyContent: 'center',
+  },
+  video: {
+    height: '30%',
+    width: '100%',
+    backgroundColor: 'black',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
-  videoContainer: {
-    width: '100%',
-    height: 240,
+  videoPH: { width: '100%', height: '100%' },
+
+  projectTitle: {
+    height: 'auto',
+    backgroundColor: 'black',
+    justifyContent: 'center',
   },
-  video: {
-    width: '100%',
-    height: '100%',
+  textcontainer: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: 'black',
   },
-  header: {
-    fontSize: 24,
-    color: '#eeeeee',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    marginBottom: 10,
-    fontFamily: 'UbuntuBold',
+  text: {
+    fontSize: 19,
+    color: 'white',
   },
-  textContainer: {
-    marginBottom: 0,
-  },
-  text1: {
-    fontSize: 18,
-    fontFamily: 'UbuntuRegular',
-    color: '#cccccc',
-    textAlign: 'left',
-    marginBottom: 10,
-    lineHeight: 25,
-  },
-  text2: {
-    fontSize: 18,
-    color: 'lightgreen',
-    textAlign: 'left',
-    marginBottom: 10,
-    lineHeight: 25,
-    fontFamily: 'UbuntuBold',
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: 'cyan',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: 20,
   },
   button: {
-    alignSelf: 'center',
-    borderRadius: 6,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    backgroundColor: GetNatureColour(),
-    marginBottom: 10,
+    backgroundColor: 'red',
+    height: 50,
+    width: 100,
+    borderColor: 'blue',
+    borderStyle: 'solid',
+    borderWidth: 3,
+    borderRadius: 10,
   },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#ffffff',
-  },
-  linkButtonRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
+
+  links: { backgroundColor: 'purple' },
+  icons: { flex: 1, padding: 20, backgroundColor: 'pink' },
 
   iconRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    marginBottom: 10,
   },
 
   icon: {
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
   },
 });
