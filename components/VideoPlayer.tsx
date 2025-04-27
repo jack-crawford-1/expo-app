@@ -1,5 +1,5 @@
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Video from 'expo-av/build/Video';
 
 export default function CustomVideoPlayer({
@@ -23,6 +23,13 @@ export default function CustomVideoPlayer({
       }
     }
   };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.pauseAsync();
+      setIsPlaying(false);
+    }
+  }, [videoSource]);
 
   return (
     <View style={styles.container}>
