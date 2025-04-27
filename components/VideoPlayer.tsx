@@ -1,16 +1,37 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useRef, useState } from 'react';
 import Video from 'expo-av/build/Video';
 
 export default function MyVideoScreen() {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayPause = async () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        await videoRef.current.pauseAsync();
+        setIsPlaying(false);
+      } else {
+        await videoRef.current.playAsync();
+        setIsPlaying(true);
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Video
-        source={{ uri: 'https://your-video-url.mp4' }}
+        ref={videoRef}
+        source={require('../assets/video/keys.mp4')}
         useNativeControls={false}
         resizeMode="contain"
         style={styles.videoContainer}
         videoStyle={styles.video}
       />
+
+      <TouchableOpacity style={styles.button} onPress={togglePlayPause}>
+        <Text style={styles.buttonText}>{isPlaying ? 'Pause' : 'Play'}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -30,5 +51,18 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     position: 'relative',
+  },
+  button: {
+    position: 'absolute',
+    bottom: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: 'white',
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
