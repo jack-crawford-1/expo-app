@@ -11,6 +11,7 @@ export default function CustomVideoPlayer({
 }) {
   const videoRef = useRef<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [key, setKey] = useState(0);
 
   const togglePlayPause = async () => {
     if (videoRef.current) {
@@ -28,6 +29,7 @@ export default function CustomVideoPlayer({
     if (videoRef.current) {
       videoRef.current.pauseAsync();
       setIsPlaying(false);
+      setKey((prev) => prev + 1);
     }
   }, [videoSource]);
 
