@@ -1,3 +1,4 @@
+import CustomVideoPlayer from '@/components/VideoPlayer';
 import AnimatedText from '../components/AnimatedText';
 import { GetNatureColour, GetMidtoneColour } from '../components/RandomColours';
 import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
@@ -166,6 +167,9 @@ export default function newIndex() {
       <View style={styles.inner}>
         <View style={styles.heading}>
           <AnimatedText>Jack Crawford</AnimatedText>
+        </View>
+        <View>
+          <CustomVideoPlayer />
         </View>
         <View style={styles.video}>
           <VideoView
