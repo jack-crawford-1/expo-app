@@ -158,7 +158,6 @@ const projects = [
 export default function newIndex() {
   const [index, setIndex] = useState(0);
   const project = projects[index];
-  // const player = useVideoPlayer(project.video, (player) => player.play());
 
   const replacePlayer = useCallback(() => {
     setIndex((prev) => (prev + 1) % projects.length);
@@ -228,6 +227,7 @@ const styles = StyleSheet.create({
     height: 'auto',
     backgroundColor: 'black',
     marginBottom: 20,
+    paddingLeft: 20,
   },
   video: {
     height: '30%',
