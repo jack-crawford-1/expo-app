@@ -73,7 +73,13 @@ export default function CustomVideoPlayer({
           isLooping={false}
           onLoadStart={handleLoadStart}
           onReadyForDisplay={handleReadyForDisplay}
-          posterStyle={{ opacity: showPoster ? 1 : 0 }}
+          // posterStyle={{ opacity: showPoster ? 1 : 0 }}
+          posterStyle={{
+            width: '100%',
+            height: '100%',
+            resizeMode: 'cover',
+            opacity: showPoster ? 1 : 0,
+          }}
         />
       </Animated.View>
 
