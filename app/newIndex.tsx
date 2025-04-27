@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
     height: 'auto',
     backgroundColor: 'black',
     justifyContent: 'center',
+    marginBottom: 40,
   },
   video: {
     height: '30%',
@@ -248,7 +249,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 19,
-    color: 'white',
+    fontFamily: 'UbuntuRegular',
+    color: '#cccccc',
   },
   text2: {
     fontSize: 18,
@@ -263,8 +265,8 @@ const styles = StyleSheet.create({
     color: '#eeeeee',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 3,
+    marginTop: 20,
     fontFamily: 'UbuntuBold',
   },
   buttonContainer: {
@@ -290,7 +292,11 @@ const styles = StyleSheet.create({
   },
 
   links: {},
-  icons: { flex: 1, padding: 20, backgroundColor: 'black' },
+  icons: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: 'black',
+  },
 
   iconRow: {
     flexDirection: 'row',

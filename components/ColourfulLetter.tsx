@@ -33,9 +33,9 @@ export function ColourfulLetter({ letter }: { letter: string }) {
     <Animated.Text
       style={[
         {
-          fontSize: 50,
-          fontWeight: '100',
-          fontFamily: 'WinkyBlack',
+          fontSize: 55,
+          fontWeight: '900',
+          fontFamily: 'UbuntuBold',
           paddingBottom: 20,
         },
         animatedStyle,
