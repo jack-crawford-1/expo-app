@@ -26,6 +26,7 @@ export default function RootLayout() {
     UbuntuRegular: require('../assets/fonts/Ubuntu-Regular.ttf'),
     UbuntuBold: require('../assets/fonts/Ubuntu-Bold.ttf'),
     FredokaBold: require('../assets/fonts/Fredoka-Bold.ttf'),
+    FredokaRegular: require('../assets/fonts/Fredoka-Regular.ttf'),
   });
 
   useEffect(() => {

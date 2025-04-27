@@ -10,8 +10,6 @@ export default function AnimatedText({ children }: { children: string }) {
     <View
       style={{
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
       }}
     >
       {letters.map((letter, index) => (
