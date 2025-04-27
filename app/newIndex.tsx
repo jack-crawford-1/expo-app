@@ -22,7 +22,7 @@ const projects = [
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
     gitHubUrl: 'https://github.com/jack-crawford-1/Community-Garden-App',
-    poster: require('../assets/images/adaptive-icon.png'),
+    poster: require('../assets/images/gardens.png'),
     icons: [
       {
         src: require('../assets/icons/nextjs.png'),
@@ -62,7 +62,7 @@ const projects = [
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
     gitHubUrl: 'https://github.com/jack-crawford-1/Hiking-App',
-    poster: require('../assets/images/adaptive-icon.png'),
+    poster: require('../assets/images/hiking.png'),
     icons: [
       {
         src: require('../assets/icons/react.png'),
@@ -94,7 +94,7 @@ const projects = [
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
     gitHubUrl: 'https://github.com/jack-crawford-1/Subscribe-and-Payments',
-    poster: require('../assets/images/adaptive-icon.png'),
+    poster: require('../assets/images/subscribe.png'),
     icons: [
       {
         src: require('../assets/icons/react.png'),
@@ -130,7 +130,7 @@ const projects = [
     subtext:
       'Alias a dolore enim nesciunt blanditiis vero, animi iusto libero dignissimos voluptatibus optio.',
     gitHubUrl: 'https://github.com/jack-crawford-1/Keyboard-Player-React',
-    poster: require('../assets/images/adaptive-icon.png'),
+    poster: require('../assets/images/keys.png'),
     icons: [
       {
         src: require('../assets/icons/react.png'),
