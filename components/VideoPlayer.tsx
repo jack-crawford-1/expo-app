@@ -19,6 +19,7 @@ export default function CustomVideoPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [key, setKey] = useState(0);
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const [showPoster, setShowPoster] = useState(true);
 
   const togglePlayPause = async () => {
     if (videoRef.current) {
@@ -38,6 +39,7 @@ export default function CustomVideoPlayer({
       setIsPlaying(false);
       setKey((prev) => prev + 1);
       fadeAnim.setValue(0);
+      setShowPoster(true);
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 500,
@@ -45,6 +47,14 @@ export default function CustomVideoPlayer({
       }).start();
     }
   }, [videoSource]);
+
+  const handleLoadStart = () => {
+    setShowPoster(true);
+  };
+
+  const handleReadyForDisplay = () => {
+    setShowPoster(false);
+  };
 
   return (
     <View style={styles.container}>
@@ -59,6 +69,11 @@ export default function CustomVideoPlayer({
           videoStyle={styles.video}
           usePoster={true}
           posterSource={posterSource}
+          shouldPlay={false}
+          isLooping={false}
+          onLoadStart={handleLoadStart}
+          onReadyForDisplay={handleReadyForDisplay}
+          posterStyle={{ opacity: showPoster ? 1 : 0 }}
         />
       </Animated.View>
 
