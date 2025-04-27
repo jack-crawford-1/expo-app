@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 19,
-    fontFamily: 'FredokaRegular',
+    fontFamily: 'UbuntuRegular',
     color: '#cccccc',
   },
   text2: {
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 0,
     marginTop: 20,
-    fontFamily: 'FredokaBold',
+    fontFamily: 'UbuntuBold',
   },
   buttonContainer: {
     flex: 1,
