@@ -169,9 +169,9 @@ export default function newIndex() {
           <AnimatedText>Jack Crawford</AnimatedText>
         </View>
         <View>
-          <CustomVideoPlayer />
+          <CustomVideoPlayer videoSource={project.video} />
         </View>
-        <View style={styles.video}>
+        {/* <View style={styles.video}>
           <VideoView
             player={player}
             style={styles.videoPH}
@@ -180,7 +180,7 @@ export default function newIndex() {
             startsPictureInPictureAutomatically={false}
             contentFit="contain"
           />
-        </View>
+        </View> */}
         <View style={styles.projectTitle}>
           <Text style={styles.header}>{project.title}</Text>
         </View>

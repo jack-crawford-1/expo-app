@@ -1,9 +1,14 @@
+// VideoPlayer.tsx
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useRef, useState } from 'react';
 import Video from 'expo-av/build/Video';
 
-export default function MyVideoScreen() {
-  const videoRef = useRef(null);
+export default function CustomVideoPlayer({
+  videoSource,
+}: {
+  videoSource: any;
+}) {
+  const videoRef = useRef<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlayPause = async () => {
@@ -22,7 +27,7 @@ export default function MyVideoScreen() {
     <View style={styles.container}>
       <Video
         ref={videoRef}
-        source={require('../assets/video/keys.mp4')}
+        source={videoSource}
         useNativeControls={false}
         resizeMode="contain"
         style={styles.videoContainer}
