@@ -232,11 +232,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   videoContainer: {
     width: '100%',
     height: '100%',
-    padding: 10,
   },
   video: {
     width: '100%',
