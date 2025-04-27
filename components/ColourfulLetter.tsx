@@ -33,10 +33,10 @@ export function ColourfulLetter({ letter }: { letter: string }) {
     <Animated.Text
       style={[
         {
-          fontSize: 55,
+          fontSize: 50,
           fontWeight: '900',
           fontFamily: 'UbuntuBold',
-          paddingBottom: 20,
+          paddingBottom: 10,
         },
         animatedStyle,
       ]}
