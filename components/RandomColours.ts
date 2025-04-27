@@ -8,8 +8,8 @@ export function GetRandomColour() {
 
 export function GetMidtoneColour() {
   const hue = Math.floor(Math.random() * 360);
-  const saturation = Math.floor(Math.random() * 40) + 60;
-  const lightness = Math.floor(Math.random() * 20) + 40;
+  const saturation = Math.floor(Math.random() * 20) + 75;
+  const lightness = Math.floor(Math.random() * 10) + 60;
 
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
