@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   text: {
-    fontSize: 19,
+    fontSize: 18,
     fontFamily: 'UbuntuRegular',
     color: '#cccccc',
   },
