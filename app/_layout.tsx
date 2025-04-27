@@ -25,6 +25,7 @@ export default function RootLayout() {
     WinkySemiBold: require('../assets/fonts/WinkyRough-SemiBold.ttf'),
     UbuntuRegular: require('../assets/fonts/Ubuntu-Regular.ttf'),
     UbuntuBold: require('../assets/fonts/Ubuntu-Bold.ttf'),
+    FredokaBold: require('../assets/fonts/Fredoka-Bold.ttf'),
   });
 
   useEffect(() => {

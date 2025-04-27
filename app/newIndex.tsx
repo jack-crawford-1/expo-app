@@ -170,7 +170,8 @@ export default function newIndex() {
     <ScrollView style={styles.container}>
       <View style={styles.inner}>
         <View style={styles.heading}>
-          <AnimatedText>Jack Crawford</AnimatedText>
+          <AnimatedText>Jack </AnimatedText>
+          <AnimatedText> Crawford</AnimatedText>
         </View>
         <View>
           <CustomVideoPlayer
@@ -238,6 +239,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     marginBottom: 40,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   video: {
     height: '30%',
