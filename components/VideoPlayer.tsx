@@ -84,7 +84,7 @@ export default function CustomVideoPlayer({
             ref={videoRef}
             source={videoSource}
             useNativeControls={false}
-            // resizeMode="contain"
+            resizeMode="contain"
             style={styles.videoContainer}
             videoStyle={styles.video}
             usePoster={false}
