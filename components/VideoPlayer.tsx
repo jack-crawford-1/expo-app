@@ -1,12 +1,13 @@
-// VideoPlayer.tsx
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useRef, useState } from 'react';
 import Video from 'expo-av/build/Video';
 
 export default function CustomVideoPlayer({
   videoSource,
+  posterSource,
 }: {
   videoSource: any;
+  posterSource: any;
 }) {
   const videoRef = useRef<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,9 +30,11 @@ export default function CustomVideoPlayer({
         ref={videoRef}
         source={videoSource}
         useNativeControls={false}
-        resizeMode="contain"
+        resizeMode={'contain'}
         style={styles.videoContainer}
         videoStyle={styles.video}
+        usePoster={true}
+        posterSource={posterSource}
       />
 
       <TouchableOpacity style={styles.button} onPress={togglePlayPause}>
