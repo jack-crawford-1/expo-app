@@ -6,14 +6,18 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import { GetMidtoneColour, GetNatureColour } from './RandomColours';
+import {
+  GetMidtoneColour,
+  GetNatureColour,
+  GetRandomColour,
+} from './RandomColours';
 
 export function ColourfulLetter({ letter }: { letter: string }) {
   const colour = useSharedValue('#ffffff');
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newColour = GetNatureColour();
+      const newColour = GetRandomColour();
       colour.value = withTiming(newColour, {
         duration: 2000,
         easing: Easing.inOut(Easing.ease),
