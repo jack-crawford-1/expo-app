@@ -34,7 +34,7 @@ export function ColourfulLetter({ letter }: { letter: string }) {
       style={[
         {
           fontSize: 58,
-          fontFamily: 'FredokaBold',
+          fontFamily: 'Inter28ptBlack',
           textTransform: 'uppercase',
         },
         animatedStyle,

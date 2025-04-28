@@ -27,6 +27,11 @@ export default function RootLayout() {
     UbuntuBold: require('../assets/fonts/Ubuntu-Bold.ttf'),
     FredokaBold: require('../assets/fonts/Fredoka-Bold.ttf'),
     FredokaRegular: require('../assets/fonts/Fredoka-Regular.ttf'),
+    Inter18ptRegular: require('../assets/fonts/Inter_18pt-Regular.ttf'),
+    Inter18ptBold: require('../assets/fonts/Inter_18pt-Bold.ttf'),
+    Inter28ptBold: require('../assets/fonts/Inter_28pt-Bold.ttf'),
+    Inter28ptMedium: require('../assets/fonts/Inter_28pt-Medium.ttf'),
+    Inter28ptBlack: require('../assets/fonts/Inter_28pt-Black.ttf'),
   });
 
   useEffect(() => {

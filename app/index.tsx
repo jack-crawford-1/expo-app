@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    fontFamily: 'UbuntuRegular',
+    fontFamily: 'Inter18ptRegular',
     color: '#cccccc',
   },
   text2: {
@@ -259,16 +259,16 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginBottom: 10,
     lineHeight: 25,
-    fontFamily: 'FredokaRegular',
+    fontFamily: 'Inter18ptBold',
   },
   header: {
     fontSize: 24,
     color: '#eeeeee',
     textAlign: 'center',
-    fontWeight: 'bold',
     marginBottom: 0,
     marginTop: 20,
-    fontFamily: 'UbuntuBold',
+    fontFamily: 'Inter28ptBlack',
+    textTransform: 'uppercase',
   },
   buttonContainer: {
     flex: 1,
@@ -291,6 +291,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#ffffff',
+    fontFamily: 'Inter18ptBold',
   },
 
   links: {},

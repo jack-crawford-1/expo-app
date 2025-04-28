@@ -142,6 +142,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 13,
     fontWeight: 'bold',
-    fontFamily: 'FredokaBold',
+    fontFamily: 'Inter28ptBlack',
   },
 });
